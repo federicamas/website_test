@@ -1,0 +1,30 @@
+:root {
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  color: #2d221b;
+  background: #fbf6f1;
+  --ink-strong: #2d221b;
+  --ink-soft: #6f5b4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
