@@ -123,7 +123,41 @@ export const shiftOklch = (
 
 export const warmnessFromOklch = (color: OklchColor) => {
   const lab = oklchToOklab(color);
-  return clamp(lab.b / 0.18, -1, 1);
+  // Use both a (red-green) and b (yellow-blue) axes for accurate undertone detection
+  // a-axis: negative = red/cool, positive = green/warm
+  // b-axis: negative = blue/cool, positive = yellow/warm
+  const warmthFromYellowBlue = clamp(lab.b / 0.18, -1, 1);
+  const warmthFromRedGreen = clamp(lab.a / 0.16, -1, 1);
+  // Weight yellow-blue more heavily (60%) than red-green (40%)
+  return warmthFromYellowBlue * 0.6 + warmthFromRedGreen * 0.4;
+};
+
+export const undertoneStrengthFromOklch = (color: OklchColor): number => {
+  const lab = oklchToOklab(color);
+  // Undertone strength is the magnitude of color bias on both axes
+  // Higher chroma = stronger undertone expression
+  return Math.sqrt(lab.a * lab.a + lab.b * lab.b);
+};
+
+export const calculate3DContrast = (colors: OklchColor[]): number => {
+  if (colors.length < 2) return 0;
+  
+  // Measure contrast across all three OKLCH dimensions
+  const lightnessDiff = pairwiseSpread(colors.map(c => c.l));
+  const chromaDiff = pairwiseSpread(colors.map(c => c.c));
+  
+  // Hue distance for contrast (circular, so use max pairwise distance)
+  let maxHueDist = 0;
+  for (let i = 0; i < colors.length; i++) {
+    for (let j = i + 1; j < colors.length; j++) {
+      const delta = Math.abs(colors[i].h - colors[j].h) % 360;
+      const dist = Math.min(delta, 360 - delta);
+      maxHueDist = Math.max(maxHueDist, dist / 180);
+    }
+  }
+  
+  // Weighted combination: lightness (40%), chroma (35%), hue (25%)
+  return lightnessDiff * 0.4 + chromaDiff * 0.35 + maxHueDist * 0.25;
 };
 
 export const formatOklch = (color: OklchColor) =>

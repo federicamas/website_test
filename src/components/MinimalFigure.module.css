@@ -336,3 +336,112 @@
     min-height: 18rem;
   }
 }
+
+@media (max-width: 480px) {
+  .figureShell {
+    padding: 0.8rem;
+    gap: 0.9rem;
+  }
+
+  .figureIntro {
+    gap: 0.35rem;
+  }
+
+  .figureIntroText {
+    font-size: 0.95rem;
+  }
+
+  .figureNote {
+    padding: 0.8rem 0.95rem;
+  }
+
+  .figureNoteText {
+    font-size: 0.82rem;
+  }
+
+  .portraitGrid {
+    gap: 0.8rem;
+  }
+
+  .portraitCard {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .photoFrame {
+    min-height: 16rem;
+  }
+
+  .portraitName {
+    font-size: 1.2rem;
+  }
+
+  .portraitRole {
+    font-size: 0.78rem;
+  }
+
+  .hotspotRow {
+    gap: 0.45rem;
+  }
+
+  .hotspot {
+    padding: 0.75rem 0.95rem;
+    font-size: 0.85rem;
+    min-height: 2.4rem;
+    gap: 0.55rem;
+  }
+
+  .hotspotLabel {
+    font-size: 0.75rem;
+  }
+
+  .hotspotSwatch {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .popover {
+    padding: 0.9rem;
+    min-width: 0;
+  }
+
+  .popoverTitle {
+    font-size: 0.75rem;
+  }
+
+  .popoverHint {
+    font-size: 0.8rem;
+    margin: 0.35rem 0 0.65rem;
+  }
+
+  .eyeSwatchGroup {
+    max-height: 11rem;
+    gap: 0.35rem;
+  }
+
+  .eyeSwatch {
+    padding: 0.5rem 0.55rem;
+    gap: 0.6rem;
+  }
+
+  .eyeSwatchDot {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .eyeSwatchName {
+    font-size: 0.82rem;
+  }
+
+  .eyeSwatchNote {
+    font-size: 0.7rem;
+  }
+
+  .colorInput {
+    height: 2.8rem;
+  }
+
+  .colorInputCompact {
+    height: 2.4rem;
+  }
+}

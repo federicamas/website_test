@@ -78,14 +78,16 @@ export const HUMAN_FEATURE_COLOR_PROFILES: Record<HumanFeatureColorKey, HumanCol
 };
 
 export const HUMAN_HAIR_COLORS: HumanFeatureColor[] = [
-  { id: "soft-black", label: "Soft Black", hex: "#241a1b", note: "near-black brunette" },
-  { id: "espresso", label: "Espresso", hex: "#382922", note: "very deep brown" },
-  { id: "dark-brown", label: "Dark Brown", hex: "#4f3529", note: "rich brunette depth" },
+  { id: "soft-black", label: "Soft Black", hex: "#241a1b", note: "near-black" },
+  { id: "espresso", label: "Espresso", hex: "#382922", note: "deep black-brown" },
+  { id: "dark-brown", label: "Dark Brown", hex: "#4f3529", note: "rich brown" },
   { id: "chestnut", label: "Chestnut", hex: "#7a5638", note: "warm medium brown" },
-  { id: "ash-brown", label: "Ash Brown", hex: "#78665d", note: "cool smoky brown" },
-  { id: "taupe-brown", label: "Taupe Brown", hex: "#80736d", note: "muted neutral brown" },
-  { id: "dark-blonde", label: "Dark Blonde", hex: "#96714c", note: "golden dark blonde" },
-  { id: "honey-blonde", label: "Honey Blonde", hex: "#b89266", note: "warm light blonde" },
+  { id: "golden-brown", label: "Golden Brown", hex: "#8b6f47", note: "light warm brown" },
+  { id: "ash-blonde", label: "Ash Blonde", hex: "#a89968", note: "cool blonde" },
+  { id: "honey-blonde", label: "Honey Blonde", hex: "#b89266", note: "warm blonde" },
+  { id: "light-blonde", label: "Light Blonde", hex: "#d4a966", note: "golden blonde" },
+  { id: "copper-red", label: "Copper Red", hex: "#a1602b", note: "warm reddish-brown" },
+  { id: "auburn", label: "Auburn", hex: "#8b4513", note: "deep warm red-brown" },
 ];
 
 export const HUMAN_SKIN_COLORS: HumanFeatureColor[] = [
